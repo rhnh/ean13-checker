@@ -61,3 +61,21 @@ footer > a {
 footer > a:hover {
   color: #ed6a5a;
 }
+
+.correct {
+  color: #80c780;
+  background-color: "rgba(0,0,0,0.2)";
+  padding: 2em;
+  border-radius: 0.2em;
+  text-transform: Capitalize;
+  content: "";
+}
+.correct::after {
+  content: " ✓";
+}
+.wrong {
+  color: red;
+}
+.wrong::after {
+  content: " 𐄂";
+}
