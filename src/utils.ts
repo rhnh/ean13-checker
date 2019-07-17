@@ -7,20 +7,16 @@ export function EAN(inputArray: number[]): number {
       10)
   );
 }
-const compose = function(f, g) {
-  return function(x) {
-    return f(g(x));
-  };
-};
+const compose = (f, g) => x => f(g(x));
 
 const map = (array: string[]): number[] => {
-  const fn = (x: string): number => +x;
+  const fn = (x: string): number => +x; //<- change to numeric
   return array.map(x => fn(x));
 };
 
-const splitIntoSpaces = (str: string): string[] => str.split("");
+const split = (str: string): string[] => str.split("");
 
 export const prep = compose(
   map,
-  splitIntoSpaces
+  split
 );
